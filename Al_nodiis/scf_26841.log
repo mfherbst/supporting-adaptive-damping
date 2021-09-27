@@ -1,0 +1,345 @@
+#
+#-- SCF Al_nodiis -- case=adaptive_01
+#
+    keywords: (damping = DFTK.AdaptiveDamping(0.025, 1.0, 0.8, 0.1, 1.1, 0.1), acceleration = DFTK.AndersonAcceleration(0, Any[], Any[], 1.0e6))
+
+hostname        = clustern12
+
+started on      = 2021-07-26T14:57:12.692
+julia threads   = 1
+BLAS threads    = 1
+MPI procs       = 16
+
+temperature     = 0.001
+smearing        = DFTK.Smearing.Gaussian()
+lattice         = [7.653 0.0 0.0; 0.0 7.653 0.0; 0.0 0.0 15.31]
+Ecut            = 20.0
+fft_size        = (25, 25, 50)
+kgrid           = [7, 7, 4]
+kshift          = [0.0, 0.0, 0.0]
+n_irreducible_k = 196
+n_bands         = 16
+n_electr        = 24
+type            = potmix
+mixing          = SimpleMixing()
+damping         = DFTK.AdaptiveDamping(0.025, 1.0, 0.8, 0.1, 1.1, 0.1)
+n     Free energy       Eₙ-Eₙ₋₁     ρout-ρin   α      Diag
+---   ---------------   ---------   --------   ----   ----
+  1   -16.19841499164         NaN   2.34e-01    NaN    2.0
+┌ Debug: Iteration 2 linesearch step 1   α=0.8 diagtol=0.0002
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:293
+┌ Debug: Step accepted
+│   energy_change = 1.064870938036826
+│   relative_residual = 0.356576645384141
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:86
+┌ Debug: Quadratic model accepted
+│   model_relerror = 0.0046698823473171735
+│   slope = -1.5119371093779852
+│   curv = 7.123104523546635
+│   α_model = 0.2122581669804254
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:139
+  2   -15.13354405360    1.06e+00   2.58e-01   0.80   12.6
+┌ Debug: Iteration 3 linesearch step 1   α=0.8 diagtol=0.0002
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:293
+┌ Debug: Step discarded
+│   energy_change = 23.114513514600095
+│   relative_residual = 3.4500504838609394
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:86
+┌ Debug: Quadratic model accepted
+│   model_relerror = 0.030255612244534793
+│   slope = -18.3900088021057
+│   curv = 120.39332598251077
+│   α_model = 0.15274940410548313
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:139
+┌ Debug: Iteration 3 linesearch step 2   α=0.15274940410548313 diagtol=0.0002
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:293
+┌ Debug: Step accepted
+│   energy_change = -1.3906584515428193
+│   relative_residual = 0.5028789152948664
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:86
+  3   -16.52420250514   -1.39e+00   2.27e-01   0.15   27.4
+┌ Debug: Iteration 4 linesearch step 1   α=0.15274940410548313 diagtol=0.0002
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:293
+┌ Debug: Step accepted
+│   energy_change = -0.05347678053396976
+│   relative_residual = 0.8080919601541109
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:86
+┌ Debug: Quadratic model accepted
+│   model_relerror = 0.003260200993757781
+│   slope = -0.8023308772379932
+│   curv = 5.936224814044362
+│   α_model = 0.1351584386325429
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:139
+  4   -16.57767928568   -5.35e-02   4.24e-02   0.15   10.8
+┌ Debug: Iteration 5 linesearch step 1   α=0.15274940410548313 diagtol=0.0002
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:293
+┌ Debug: Step accepted
+│   energy_change = -0.004607591282123735
+│   relative_residual = 0.8454195998501428
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:86
+┌ Debug: Quadratic model accepted
+│   model_relerror = 3.052109511455123e-5
+│   slope = -0.04531883765699737
+│   curv = 0.19843451446993993
+│   α_model = 0.22838183054018327
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:139
+  5   -16.58228687696   -4.61e-03   8.53e-03   0.15   10.7
+┌ Debug: Iteration 6 linesearch step 1   α=0.2512200135942016 diagtol=8.525890686744801e-5
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:293
+┌ Debug: Step accepted
+│   energy_change = -0.0030556109938935094
+│   relative_residual = 0.748884308678193
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:86
+┌ Debug: Quadratic model accepted
+│   model_relerror = 9.540168545064704e-5
+│   slope = -0.01475926770847319
+│   curv = 0.02067781625293664
+│   α_model = 0.7137730371492732
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:139
+  6   -16.58534248795   -3.06e-03   5.79e-03   0.25   12.1
+┌ Debug: Iteration 7 linesearch step 1   α=0.7851503408642005 diagtol=5.787142785452907e-5
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:293
+┌ Debug: Step accepted
+│   energy_change = -0.0027504211021280867
+│   relative_residual = 0.22373614231350913
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:86
+┌ Debug: Quadratic model accepted
+│   model_relerror = 0.0003661297795758643
+│   slope = -0.007345849058430616
+│   curv = 0.009785428425683449
+│   α_model = 0.7506926359146667
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:139
+  7   -16.58809290906   -2.75e-03   1.11e-02   0.79   12.6
+┌ Debug: Iteration 8 linesearch step 1   α=0.8257618995061334 diagtol=5.787142785452907e-5
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:293
+┌ Debug: Step discarded
+│   energy_change = 0.01134626283732132
+│   relative_residual = 1.3329300439144462
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:86
+┌ Debug: Quadratic model accepted
+│   model_relerror = 2.792599313964515e-5
+│   slope = -0.00744521020079606
+│   curv = 0.05131063311264244
+│   α_model = 0.14510072764940476
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:139
+┌ Debug: Iteration 8 linesearch step 2   α=0.14510072764940476 diagtol=5.787142785452907e-5
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:293
+┌ Debug: Step accepted
+│   energy_change = -0.0005396942471165289
+│   relative_residual = 0.8256772010900266
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:86
+  8   -16.58863260330   -5.40e-04   3.75e-03   0.15   25.4
+┌ Debug: Iteration 9 linesearch step 1   α=0.14510072764940476 diagtol=3.748253393904938e-5
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:293
+┌ Debug: Step accepted
+│   energy_change = -5.462666691613549e-5
+│   relative_residual = 0.8546157663455412
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:86
+┌ Debug: Quadratic model accepted
+│   model_relerror = 1.7905715881134194e-5
+│   slope = -0.00043586551879147534
+│   curv = 0.0008185302908078565
+│   α_model = 0.5324977263349577
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:139
+  9   -16.58868722997   -5.46e-05   6.51e-04   0.15   13.3
+┌ Debug: Iteration 10 linesearch step 1   α=0.5857474989684536 diagtol=6.513509265628433e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:293
+┌ Debug: Step accepted
+│   energy_change = -9.580100411099579e-5
+│   relative_residual = 0.41510269039808695
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:86
+┌ Debug: Quadratic model accepted
+│   model_relerror = 0.00013243472918884102
+│   slope = -0.0002594121100707954
+│   curv = 0.00032722985426258554
+│   α_model = 0.7927519652978552
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:139
+ 10   -16.58878303097   -9.58e-05   1.75e-03   0.59   15.9
+┌ Debug: Iteration 11 linesearch step 1   α=0.8720271618276407 diagtol=6.513509265628433e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:293
+┌ Debug: Step accepted
+│   energy_change = -1.450396917590524e-5
+│   relative_residual = 0.15775193616804142
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:86
+┌ Debug: Quadratic model accepted
+│   model_relerror = 5.757299387259005e-5
+│   slope = -4.456740036968409e-5
+│   curv = 6.407113237805638e-5
+│   α_model = 0.6955925190569584
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:139
+ 11   -16.58879753494   -1.45e-05   9.88e-04   0.87   15.9
+┌ Debug: Iteration 12 linesearch step 1   α=0.8720271618276407 diagtol=6.513509265628433e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:293
+┌ Debug: Step discarded
+│   energy_change = 0.00012548724873795436
+│   relative_residual = 2.986246109867804
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:86
+┌ Debug: Quadratic model accepted
+│   model_relerror = 2.350193282234728e-5
+│   slope = -7.10851161257907e-5
+│   curv = 0.0004930686943366698
+│   α_model = 0.14416878812681916
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:139
+┌ Debug: Iteration 12 linesearch step 2   α=0.14416878812681916 diagtol=6.513509265628433e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:293
+┌ Debug: Step accepted
+│   energy_change = -5.123058006262227e-6
+│   relative_residual = 0.7127657637629532
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:86
+ 12   -16.58880265800   -5.12e-06   3.70e-04   0.14   31.8
+┌ Debug: Iteration 13 linesearch step 1   α=0.14416878812681916 diagtol=3.7011244797425243e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:293
+┌ Debug: Step accepted
+│   energy_change = -3.9986286992643727e-7
+│   relative_residual = 0.8516232944868878
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:86
+┌ Debug: Quadratic model accepted
+│   model_relerror = 0.00010173130510904743
+│   slope = -3.3723899406477697e-6
+│   curv = 8.311058804745253e-6
+│   α_model = 0.40577139686730185
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:139
+ 13   -16.58880305786   -4.00e-07   7.41e-05   0.14   16.6
+┌ Debug: Iteration 14 linesearch step 1   α=0.44634853655403206 diagtol=7.408288898996524e-7
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:293
+┌ Debug: Step accepted
+│   energy_change = -4.142398672968284e-7
+│   relative_residual = 0.551620295377244
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:86
+┌ Debug: Quadratic model accepted
+│   model_relerror = 1.8791034578702647e-5
+│   slope = -1.5865009224182546e-6
+│   curv = 2.950249619077116e-6
+│   α_model = 0.5377514201373025
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:139
+ 14   -16.58880347210   -4.14e-07   1.47e-04   0.45   19.0
+┌ Debug: Iteration 15 linesearch step 1   α=0.5915265621510328 diagtol=7.408288898996524e-7
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:293
+┌ Debug: Step accepted
+│   energy_change = -6.860418366727572e-8
+│   relative_residual = 0.41483114505296
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:86
+┌ Debug: Quadratic model accepted
+│   model_relerror = 2.4287479659235785e-5
+│   slope = -1.8207175275137097e-7
+│   curv = 2.2345822066429974e-7
+│   α_model = 0.8147910254100543
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:139
+ 15   -16.58880354071   -6.86e-08   3.56e-05   0.59   19.0
+┌ Debug: Iteration 16 linesearch step 1   α=0.8962701279510599 diagtol=3.5623509882407626e-7
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:293
+┌ Debug: Step accepted
+│   energy_change = 1.5260174990316955e-7
+│   relative_residual = 0.7929729904331925
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:86
+┌ Debug: Quadratic model accepted
+│   model_relerror = 1.5388707817421664e-5
+│   slope = -1.1429217543214194e-7
+│   curv = 6.349707913777002e-7
+│   α_model = 0.1799959572694068
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:139
+ 16   -16.58880338811    1.53e-07   8.08e-05   0.90   20.1
+┌ Debug: Iteration 17 linesearch step 1   α=0.8962701279510599 diagtol=3.5623509882407626e-7
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:293
+┌ Debug: Step discarded
+│   energy_change = 5.375644903438115e-6
+│   relative_residual = 5.58446046821073
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:86
+┌ Debug: Quadratic model accepted
+│   model_relerror = 6.189241328177642e-6
+│   slope = -2.58902350945465e-6
+│   curv = 1.916131269536497e-5
+│   α_model = 0.1351172307772485
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:139
+┌ Debug: Iteration 17 linesearch step 2   α=0.1351172307772485 diagtol=3.5623509882407626e-7
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:293
+┌ Debug: Step accepted
+│   energy_change = -1.749139961759738e-7
+│   relative_residual = 0.1179511974051222
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:86
+ 17   -16.58880356302   -1.75e-07   6.66e-05   0.14   40.2
+┌ Debug: Iteration 18 linesearch step 1   α=0.1351172307772485 diagtol=3.5623509882407626e-7
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:293
+┌ Debug: Step accepted
+│   energy_change = -8.444800414508791e-11
+│   relative_residual = 0.8656901028319951
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:86
+┌ Debug: Quadratic model accepted
+│   model_relerror = 0.0002524190155658393
+│   slope = -6.827075362049185e-10
+│   curv = 8.564477755845829e-10
+│   α_model = 0.7971385479271342
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:139
+ 18   -16.58880356311   -8.44e-11   6.33e-07   0.14   20.1
+┌ Debug: Iteration 19 linesearch step 1   α=0.8768524027198478 diagtol=6.333926506818762e-9
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:293
+┌ Debug: Step accepted
+│   energy_change = -2.0934720623699832e-10
+│   relative_residual = 0.1444404031008033
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:86
+┌ Debug: Quadratic model accepted
+│   model_relerror = 0.0014424871873196892
+│   slope = -4.764156352676771e-10
+│   curv = 5.428715336736027e-10
+│   α_model = 0.877584484940259
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:139
+ 19   -16.58880356331   -2.09e-10   3.12e-06   0.88   25.9
+┌ Debug: Iteration 20 linesearch step 1   α=0.965342933434285 diagtol=6.333926506818762e-9
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:293
+┌ Debug: Step accepted
+│   energy_change = 2.3945290195115376e-12
+│   relative_residual = 0.4520246976367035
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:86
+┌ Debug: Quadratic model accepted
+│   model_relerror = 0.001483679525222552
+│   slope = -8.575810324379783e-11
+│   curv = 1.828060860717042e-10
+│   α_model = 0.4691206134688531
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/CsmZm/src/scf/potential_mixing.jl:139
+ 20   -16.58880356331    2.39e-12   2.58e-06   0.97   25.9
+
+Energy breakdown:
+    Kinetic             6.9421307 
+    AtomicLocal         2.7102216 
+    AtomicNonlocal      3.2005880 
+    Ewald               -21.5543405
+    PspCorrection       -1.5044666
+    Hartree             0.0407543 
+    Xc                  -6.4236618
+    Entropy             -0.0000292
+
+    total               -16.588803563312
+
+ ──────────────────────────────────────────────────────────────────────────────
+                                       Time                   Allocations      
+                               ──────────────────────   ───────────────────────
+       Tot / % measured:             305s / 97.6%           40.0GiB / 97.7%    
+
+ Section               ncalls     time   %tot     avg     alloc   %tot      avg
+ ──────────────────────────────────────────────────────────────────────────────
+ scf_potential_mixing       1     297s   100%    297s   39.1GiB  100%   39.1GiB
+   LOBPCG                 312     256s  86.3%   822ms   33.9GiB  86.8%   111MiB
+     Hamiltonian mu...  5.34k    82.9s  27.9%  15.5ms   6.04GiB  15.5%  1.16MiB
+       kinetic+local    5.34k    59.9s  20.1%  11.2ms    309MiB  0.77%  59.3KiB
+       nonlocal         5.34k    21.7s  7.29%  4.05ms   4.45GiB  11.4%   873KiB
+     rayleigh_ritz      5.03k    33.7s  11.3%  6.70ms    779MiB  1.95%   159KiB
+     ortho!             21.1k    17.0s  5.70%   805μs    597MiB  1.49%  29.0KiB
+   energy_hamiltonian      25    14.7s  4.95%   589ms   2.04GiB  5.23%  83.8MiB
+     ene_ops               25    12.5s  4.22%   501ms   1.69GiB  4.33%  69.4MiB
+       ene_ops: xc         25    6.09s  2.05%   244ms   0.98GiB  2.49%  39.9MiB
+       ene_ops: non...     25    1.31s  0.44%  52.3ms   49.6MiB  0.12%  1.98MiB
+       ene_ops: har...     25    512ms  0.17%  20.5ms   84.8MiB  0.21%  3.39MiB
+       ene_ops: kin...     25    445ms  0.15%  17.8ms   35.9MiB  0.09%  1.44MiB
+       ene_ops: local      25    348ms  0.12%  13.9ms   33.3MiB  0.08%  1.33MiB
+   apply_kernel            19    4.96s  1.67%   261ms   0.98GiB  2.50%  52.8MiB
+   compute_density         24    4.84s  1.63%   202ms    595MiB  1.49%  24.8MiB
+   QR orthonormaliz...    312    379μs  0.00%  1.22μs     0.00B  0.00%    0.00B
+ ──────────────────────────────────────────────────────────────────────────────
+┌ Debug: Library handles
+│   libGR_handle[] = Ptr{Nothing} @0x0000000008b650b0
+│   libGR3_handle[] = Ptr{Nothing} @0x0000000015cc6fc0
+│   libGRM_handle[] = Ptr{Nothing} @0x0000000008b64a20
+└ @ GR /home/herbstm/.julia/packages/GR/4DHy8/src/funcptrs.jl:67
+┌ Debug: Found GKS_ENCODING in ENV
+│   text_encoding[] = 301
+└ @ GR /home/herbstm/.julia/packages/GR/4DHy8/src/GR.jl:468

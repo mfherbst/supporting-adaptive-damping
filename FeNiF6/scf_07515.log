@@ -1,0 +1,364 @@
+#
+#-- SCF FeNiF6 -- case=standard_06
+#
+    keywords: (damping = DFTK.FixedDamping(0.6),)
+
+hostname        = clustern25
+
+started on      = 2021-07-10T22:55:28.510
+julia threads   = 1
+BLAS threads    = 1
+MPI procs       = 16
+
+temperature     = 0.01
+smearing        = DFTK.Smearing.Gaussian()
+lattice         = [4.76 -4.76 -0.0; 2.748 2.748 -5.496; 8.305 8.305 8.305]
+Ecut            = 45.0
+fft_size        = (64, 64, 64)
+kgrid           = [11, 11, 11]
+kshift          = [0.0, 0.0, 0.0]
+n_irreducible_k = 452
+n_bands         = 92
+n_electr        = 76
+type            = potmix
+mixing          = KerkerMixing(0.8, 0.0)
+damping         = DFTK.FixedDamping(0.6)
+n     Free energy       Eₙ-Eₙ₋₁     ρout-ρin   Magnet   α      Diag
+---   ---------------   ---------   --------   ------   ----   ----
+  1   -365.3440297385         NaN   7.63e+00    0.876    NaN    2.0
+┌ Debug: Iteration 2 linesearch step 1   α=0.6 diagtol=0.0002
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+  2   -397.3046191637   -3.20e+01   6.94e+00    1.081   0.60   22.4
+┌ Debug: Iteration 3 linesearch step 1   α=0.6 diagtol=0.0002
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+  3   -424.5472704400   -2.72e+01   3.07e+00    2.000   0.60   22.7
+┌ Debug: Iteration 4 linesearch step 1   α=0.6 diagtol=0.0002
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+  4   -426.7368923429   -2.19e+00   2.30e-01    2.000   0.60   22.8
+┌ Debug: Iteration 5 linesearch step 1   α=0.6 diagtol=0.0002
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+  5   -414.5749188520    1.22e+01   2.78e+00    1.742   0.60   22.7
+┌ Debug: Iteration 6 linesearch step 1   α=0.6 diagtol=0.0002
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+  6   -417.6864192820   -3.11e+00   2.11e-01    1.959   0.60   22.7
+┌ Debug: Iteration 7 linesearch step 1   α=0.6 diagtol=0.0002
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+  7   -429.0237599590   -1.13e+01   2.37e+00    2.406   0.60   22.9
+┌ Debug: Iteration 8 linesearch step 1   α=0.6 diagtol=0.0002
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+  8   -429.6378204347   -6.14e-01   1.18e-01    2.905   0.60   23.1
+┌ Debug: Iteration 9 linesearch step 1   α=0.6 diagtol=0.0002
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+  9   -431.5913299408   -1.95e+00   9.61e-01    3.586   0.60   23.2
+┌ Debug: Iteration 10 linesearch step 1   α=0.6 diagtol=0.0002
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 10   -431.7948046127   -2.03e-01   9.93e-02    3.675   0.60   23.2
+┌ Debug: Iteration 11 linesearch step 1   α=0.6 diagtol=0.0002
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 11   -431.7812067113    1.36e-02   1.05e-02    3.650   0.60   23.1
+┌ Debug: Iteration 12 linesearch step 1   α=0.6 diagtol=0.00010458894727456991
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 12   -431.8087224718   -2.75e-02   5.64e-02    3.843   0.60   24.6
+┌ Debug: Iteration 13 linesearch step 1   α=0.6 diagtol=0.00010458894727456991
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 13   -431.9762857649   -1.68e-01   2.07e-01    4.055   0.60   24.7
+┌ Debug: Iteration 14 linesearch step 1   α=0.6 diagtol=0.00010458894727456991
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 14   -431.9559617053    2.03e-02   1.27e-01    3.793   0.60   24.6
+┌ Debug: Iteration 15 linesearch step 1   α=0.6 diagtol=0.00010458894727456991
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 15   -431.5705662128    3.85e-01   3.07e-01    3.533   0.60   24.7
+┌ Debug: Iteration 16 linesearch step 1   α=0.6 diagtol=0.00010458894727456991
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 16   -431.9882229113   -4.18e-01   3.70e-01    3.999   0.60   24.7
+┌ Debug: Iteration 17 linesearch step 1   α=0.6 diagtol=0.00010458894727456991
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 17   -431.9899556019   -1.73e-03   1.24e-01    4.000   0.60   24.7
+┌ Debug: Iteration 18 linesearch step 1   α=0.6 diagtol=0.00010458894727456991
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 18   -431.9849333449    5.02e-03   3.06e-02    3.989   0.60   24.8
+┌ Debug: Iteration 19 linesearch step 1   α=0.6 diagtol=0.00010458894727456991
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 19   -431.9856498520   -7.17e-04   2.64e-03    3.989   0.60   24.6
+┌ Debug: Iteration 20 linesearch step 1   α=0.6 diagtol=2.642209674408068e-5
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 20   -431.9900015366   -4.35e-03   3.40e-01    4.006   0.60   27.9
+┌ Debug: Iteration 21 linesearch step 1   α=0.6 diagtol=2.642209674408068e-5
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 21   -431.9910120456   -1.01e-03   3.71e-02    4.110   0.60   27.9
+┌ Debug: Iteration 22 linesearch step 1   α=0.6 diagtol=2.642209674408068e-5
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 22   -431.9928009794   -1.79e-03   3.00e-02    4.113   0.60   27.9
+┌ Debug: Iteration 23 linesearch step 1   α=0.6 diagtol=2.642209674408068e-5
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 23   -431.9964437495   -3.64e-03   7.42e-02    4.077   0.60   28.1
+┌ Debug: Iteration 24 linesearch step 1   α=0.6 diagtol=2.642209674408068e-5
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 24   -431.9959653630    4.78e-04   1.67e-02    4.123   0.60   27.9
+┌ Debug: Iteration 25 linesearch step 1   α=0.6 diagtol=2.642209674408068e-5
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 25   -431.9941102263    1.86e-03   6.52e-02    4.336   0.60   28.0
+┌ Debug: Iteration 26 linesearch step 1   α=0.6 diagtol=2.642209674408068e-5
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 26   -431.9958819128   -1.77e-03   6.15e-02    4.140   0.60   27.9
+┌ Debug: Iteration 27 linesearch step 1   α=0.6 diagtol=2.642209674408068e-5
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 27   -431.9955597047    3.22e-04   3.44e-02    4.295   0.60   27.9
+┌ Debug: Iteration 28 linesearch step 1   α=0.6 diagtol=2.642209674408068e-5
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 28   -431.9968713533   -1.31e-03   4.35e-02    4.143   0.60   27.9
+┌ Debug: Iteration 29 linesearch step 1   α=0.6 diagtol=2.642209674408068e-5
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 29   -431.9961558048    7.16e-04   4.16e-02    4.313   0.60   28.0
+┌ Debug: Iteration 30 linesearch step 1   α=0.6 diagtol=2.642209674408068e-5
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 30   -431.9905249609    5.63e-03   1.65e-01    5.009   0.60   27.9
+┌ Debug: Iteration 31 linesearch step 1   α=0.6 diagtol=2.642209674408068e-5
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 31   -431.9858148498    4.71e-03   1.05e-01    5.491   0.60   27.9
+┌ Debug: Iteration 32 linesearch step 1   α=0.6 diagtol=2.642209674408068e-5
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 32   -431.9940422508   -8.23e-03   1.93e-01    4.659   0.60   27.9
+┌ Debug: Iteration 33 linesearch step 1   α=0.6 diagtol=2.642209674408068e-5
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 33   -431.9953049017   -1.26e-03   7.01e-02    4.379   0.60   27.9
+┌ Debug: Iteration 34 linesearch step 1   α=0.6 diagtol=2.642209674408068e-5
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 34   -431.9961934007   -8.88e-04   1.64e-02    4.323   0.60   28.0
+┌ Debug: Iteration 35 linesearch step 1   α=0.6 diagtol=2.642209674408068e-5
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 35   -431.9954166847    7.77e-04   4.30e-02    4.487   0.60   27.9
+┌ Debug: Iteration 36 linesearch step 1   α=0.6 diagtol=2.642209674408068e-5
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 36   -431.9924189101    3.00e-03   1.64e-01    5.190   0.60   27.9
+┌ Debug: Iteration 37 linesearch step 1   α=0.6 diagtol=2.642209674408068e-5
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 37   -431.9927288602   -3.10e-04   1.86e-02    5.268   0.60   28.0
+┌ Debug: Iteration 38 linesearch step 1   α=0.6 diagtol=2.642209674408068e-5
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 38   -431.9927061676    2.27e-05   8.83e-03    5.307   0.60   28.0
+┌ Debug: Iteration 39 linesearch step 1   α=0.6 diagtol=2.642209674408068e-5
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 39   -431.9929778570   -2.72e-04   4.27e-02    5.117   0.60   27.9
+┌ Debug: Iteration 40 linesearch step 1   α=0.6 diagtol=2.642209674408068e-5
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 40   -431.9915132427    1.46e-03   1.44e-01    5.753   0.60   28.0
+┌ Debug: Iteration 41 linesearch step 1   α=0.6 diagtol=2.642209674408068e-5
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 41   -431.9912107348    3.03e-04   1.52e-02    5.812   0.60   27.9
+┌ Debug: Iteration 42 linesearch step 1   α=0.6 diagtol=2.642209674408068e-5
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 42   -431.9916632730   -4.53e-04   1.41e-02    5.755   0.60   28.0
+┌ Debug: Iteration 43 linesearch step 1   α=0.6 diagtol=2.642209674408068e-5
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 43   -431.9904621225    1.20e-03   3.15e-02    5.854   0.60   28.0
+┌ Debug: Iteration 44 linesearch step 1   α=0.6 diagtol=2.642209674408068e-5
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 44   -431.9908940103   -4.32e-04   8.29e-03    5.826   0.60   28.0
+┌ Debug: Iteration 45 linesearch step 1   α=0.6 diagtol=2.642209674408068e-5
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 45   -431.9921161967   -1.22e-03   4.30e-02    5.656   0.60   28.0
+┌ Debug: Iteration 46 linesearch step 1   α=0.6 diagtol=2.642209674408068e-5
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 46   -431.9921545377   -3.83e-05   6.03e-03    5.629   0.60   28.0
+┌ Debug: Iteration 47 linesearch step 1   α=0.6 diagtol=2.642209674408068e-5
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 47   -431.9927250939   -5.71e-04   6.20e-02    5.357   0.60   27.9
+┌ Debug: Iteration 48 linesearch step 1   α=0.6 diagtol=2.642209674408068e-5
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 48   -431.9927534675   -2.84e-05   5.99e-04    5.355   0.60   28.0
+┌ Debug: Iteration 49 linesearch step 1   α=0.6 diagtol=5.991573773989111e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 49   -431.9930719296   -3.18e-04   2.05e-02    5.268   0.60   31.8
+┌ Debug: Iteration 50 linesearch step 1   α=0.6 diagtol=5.991573773989111e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 50   -431.9935176811   -4.46e-04   5.21e-02    5.039   0.60   31.8
+┌ Debug: Iteration 51 linesearch step 1   α=0.6 diagtol=5.991573773989111e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 51   -431.9933300597    1.88e-04   2.22e-02    5.137   0.60   31.8
+┌ Debug: Iteration 52 linesearch step 1   α=0.6 diagtol=5.991573773989111e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 52   -431.9932274388    1.03e-04   1.54e-02    5.205   0.60   31.8
+┌ Debug: Iteration 53 linesearch step 1   α=0.6 diagtol=5.991573773989111e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 53   -431.9932645162   -3.71e-05   3.91e-03    5.188   0.60   31.8
+┌ Debug: Iteration 54 linesearch step 1   α=0.6 diagtol=5.991573773989111e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 54   -431.9932898633   -2.53e-05   3.54e-03    5.172   0.60   31.8
+┌ Debug: Iteration 55 linesearch step 1   α=0.6 diagtol=5.991573773989111e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 55   -431.9923284617    9.61e-04   1.02e-01    5.622   0.60   31.8
+┌ Debug: Iteration 56 linesearch step 1   α=0.6 diagtol=5.991573773989111e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 56   -431.9943110174   -1.98e-03   2.05e-01    4.721   0.60   31.8
+┌ Debug: Iteration 57 linesearch step 1   α=0.6 diagtol=5.991573773989111e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 57   -431.9944215009   -1.10e-04   8.37e-03    4.686   0.60   31.9
+┌ Debug: Iteration 58 linesearch step 1   α=0.6 diagtol=5.991573773989111e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 58   -431.9934691984    9.52e-04   8.98e-02    5.073   0.60   31.8
+┌ Debug: Iteration 59 linesearch step 1   α=0.6 diagtol=5.991573773989111e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 59   -431.9944842295   -1.02e-03   9.87e-02    4.649   0.60   31.8
+┌ Debug: Iteration 60 linesearch step 1   α=0.6 diagtol=5.991573773989111e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 60   -431.9946958491   -2.12e-04   1.64e-02    4.581   0.60   31.8
+┌ Debug: Iteration 61 linesearch step 1   α=0.6 diagtol=5.991573773989111e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 61   -431.9940423404    6.54e-04   5.00e-02    4.791   0.60   31.8
+┌ Debug: Iteration 62 linesearch step 1   α=0.6 diagtol=5.991573773989111e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 62   -431.9935975178    4.45e-04   4.41e-02    4.982   0.60   31.8
+┌ Debug: Iteration 63 linesearch step 1   α=0.6 diagtol=5.991573773989111e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 63   -431.9937037450   -1.06e-04   1.13e-02    4.932   0.60   31.9
+┌ Debug: Iteration 64 linesearch step 1   α=0.6 diagtol=5.991573773989111e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 64   -431.9937440486   -4.03e-05   4.56e-03    4.913   0.60   31.8
+┌ Debug: Iteration 65 linesearch step 1   α=0.6 diagtol=5.991573773989111e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 65   -431.9941193895   -3.75e-04   3.99e-02    4.742   0.60   31.8
+┌ Debug: Iteration 66 linesearch step 1   α=0.6 diagtol=5.991573773989111e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 66   -431.9928528799    1.27e-03   1.38e-01    5.349   0.60   31.8
+┌ Debug: Iteration 67 linesearch step 1   α=0.6 diagtol=5.991573773989111e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 67   -431.9929415574   -8.87e-05   1.13e-02    5.299   0.60   31.8
+┌ Debug: Iteration 68 linesearch step 1   α=0.6 diagtol=5.991573773989111e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 68   -431.9929592221   -1.77e-05   4.41e-04    5.297   0.60   31.8
+┌ Debug: Iteration 69 linesearch step 1   α=0.6 diagtol=4.414422159872937e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 69   -431.9930208443   -6.16e-05   8.89e-03    5.257   0.60   32.7
+┌ Debug: Iteration 70 linesearch step 1   α=0.6 diagtol=4.414422159872937e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 70   -431.9930999706   -7.91e-05   8.66e-03    5.218   0.60   32.7
+┌ Debug: Iteration 71 linesearch step 1   α=0.6 diagtol=4.414422159872937e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 71   -431.9929979808    1.02e-04   2.33e-02    5.321   0.60   32.7
+┌ Debug: Iteration 72 linesearch step 1   α=0.6 diagtol=4.414422159872937e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 72   -431.9928050142    1.93e-04   2.34e-02    5.426   0.60   32.6
+┌ Debug: Iteration 73 linesearch step 1   α=0.6 diagtol=4.414422159872937e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 73   -431.9927019076    1.03e-04   9.75e-03    5.469   0.60   32.7
+┌ Debug: Iteration 74 linesearch step 1   α=0.6 diagtol=4.414422159872937e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 74   -431.9926842466    1.77e-05   2.04e-03    5.478   0.60   32.7
+┌ Debug: Iteration 75 linesearch step 1   α=0.6 diagtol=4.414422159872937e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 75   -431.9926933439   -9.10e-06   8.77e-04    5.474   0.60   32.7
+┌ Debug: Iteration 76 linesearch step 1   α=0.6 diagtol=4.414422159872937e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 76   -431.9926972381   -3.89e-06   5.90e-03    5.497   0.60   32.7
+┌ Debug: Iteration 77 linesearch step 1   α=0.6 diagtol=4.414422159872937e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 77   -431.9935922537   -8.95e-04   1.09e-01    5.014   0.60   32.7
+┌ Debug: Iteration 78 linesearch step 1   α=0.6 diagtol=4.414422159872937e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 78   -431.9945046762   -9.12e-04   8.46e-02    4.653   0.60   32.7
+┌ Debug: Iteration 79 linesearch step 1   α=0.6 diagtol=4.414422159872937e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 79   -431.9928687308    1.64e-03   1.73e-01    5.407   0.60   32.6
+┌ Debug: Iteration 80 linesearch step 1   α=0.6 diagtol=4.414422159872937e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 80   -431.9920657114    8.03e-04   5.98e-02    5.671   0.60   32.7
+┌ Debug: Iteration 81 linesearch step 1   α=0.6 diagtol=4.414422159872937e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 81   -431.9927493508   -6.84e-04   4.72e-02    5.464   0.60   32.7
+┌ Debug: Iteration 82 linesearch step 1   α=0.6 diagtol=4.414422159872937e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 82   -431.9927307654    1.86e-05   2.15e-03    5.473   0.60   32.8
+┌ Debug: Iteration 83 linesearch step 1   α=0.6 diagtol=4.414422159872937e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 83   -431.9929318080   -2.01e-04   1.84e-02    5.390   0.60   32.7
+┌ Debug: Iteration 84 linesearch step 1   α=0.6 diagtol=4.414422159872937e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 84   -431.9929576173   -2.58e-05   2.26e-03    5.380   0.60   32.7
+┌ Debug: Iteration 85 linesearch step 1   α=0.6 diagtol=4.414422159872937e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 85   -431.9932366015   -2.79e-04   3.62e-02    5.218   0.60   32.7
+┌ Debug: Iteration 86 linesearch step 1   α=0.6 diagtol=4.414422159872937e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 86   -431.9929139284    3.23e-04   4.18e-02    5.405   0.60   32.6
+┌ Debug: Iteration 87 linesearch step 1   α=0.6 diagtol=4.414422159872937e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 87   -431.9924344799    4.79e-04   4.22e-02    5.591   0.60   32.7
+┌ Debug: Iteration 88 linesearch step 1   α=0.6 diagtol=4.414422159872937e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 88   -431.9925470665   -1.13e-04   9.03e-03    5.552   0.60   32.7
+┌ Debug: Iteration 89 linesearch step 1   α=0.6 diagtol=4.414422159872937e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 89   -431.9932026782   -6.56e-04   7.01e-02    5.241   0.60   32.7
+┌ Debug: Iteration 90 linesearch step 1   α=0.6 diagtol=4.414422159872937e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 90   -431.9934267425   -2.24e-04   3.05e-02    5.105   0.60   32.7
+┌ Debug: Iteration 91 linesearch step 1   α=0.6 diagtol=4.414422159872937e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 91   -431.9933786064    4.81e-05   6.35e-03    5.133   0.60   32.7
+┌ Debug: Iteration 92 linesearch step 1   α=0.6 diagtol=4.414422159872937e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 92   -431.9933579259    2.07e-05   2.60e-03    5.145   0.60   32.7
+┌ Debug: Iteration 93 linesearch step 1   α=0.6 diagtol=4.414422159872937e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 93   -431.9932283308    1.30e-04   1.80e-02    5.224   0.60   32.7
+┌ Debug: Iteration 94 linesearch step 1   α=0.6 diagtol=4.414422159872937e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 94   -431.9929350242    2.93e-04   3.79e-02    5.393   0.60   32.6
+┌ Debug: Iteration 95 linesearch step 1   α=0.6 diagtol=4.414422159872937e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 95   -431.9929614815   -2.65e-05   3.07e-03    5.379   0.60   32.7
+┌ Debug: Iteration 96 linesearch step 1   α=0.6 diagtol=4.414422159872937e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 96   -431.9935308905   -5.69e-04   7.53e-02    5.046   0.60   32.7
+┌ Debug: Iteration 97 linesearch step 1   α=0.6 diagtol=4.414422159872937e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 97   -431.9937458509   -2.15e-04   2.48e-02    4.937   0.60   32.6
+┌ Debug: Iteration 98 linesearch step 1   α=0.6 diagtol=4.414422159872937e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 98   -431.9934153299    3.31e-04   3.92e-02    5.109   0.60   32.8
+┌ Debug: Iteration 99 linesearch step 1   α=0.6 diagtol=4.414422159872937e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+ 99   -431.9937616435   -3.46e-04   4.31e-02    4.921   0.60   32.7
+┌ Debug: Iteration 100 linesearch step 1   α=0.6 diagtol=4.414422159872937e-6
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/potential_mixing.jl:293
+┌ Warning: SCF not converged.
+└ @ DFTK /home/herbstm/.julia/packages/DFTK/wsJoZ/src/scf/scf_callbacks.jl:37
+
+Energy breakdown:
+    Kinetic             256.0576032
+    AtomicLocal         -549.7082020
+    AtomicNonlocal      -32.8926519
+    Ewald               -226.7105490
+    PspCorrection       4.0853615 
+    Hartree             174.1240397
+    Xc                  -56.9454392
+    Entropy             -0.0036913
+
+    total               -431.993529103786
+
+ ──────────────────────────────────────────────────────────────────────────────
+                                       Time                   Allocations      
+                               ──────────────────────   ───────────────────────
+       Tot / % measured:           92420s / 100%            3916GiB / 100%     
+
+ Section               ncalls     time   %tot     avg     alloc   %tot      avg
+ ──────────────────────────────────────────────────────────────────────────────
+ scf_potential_mixing       1   92420s   100%  92420s   3916GiB  100%   3916GiB
+   LOBPCG               3.00k   87912s  95.1%   29.3s   3809GiB  97.3%  1.27GiB
+     Hamiltonian mu...  89.7k   26549s  28.7%   296ms    679GiB  17.3%  7.75MiB
+       kinetic+local    89.7k   24540s  26.6%   274ms   8.26GiB  0.21%  96.6KiB
+       nonlocal         89.7k    1935s  2.09%  21.6ms    495GiB  12.6%  5.66MiB
+     rayleigh_ritz      86.7k   14264s  15.4%   165ms    136GiB  3.47%  1.61MiB
+     ortho!              385k    5811s  6.29%  15.1ms    117GiB  3.00%   320KiB
+   compute_density        100    2633s  2.85%   26.3s   32.6GiB  0.83%   333MiB
+   energy_hamiltonian     101     441s  0.48%   4.37s   47.3GiB  1.21%   479MiB
+     ene_ops              101     418s  0.45%   4.13s   35.0GiB  0.89%   355MiB
+       ene_ops: non...    101     128s  0.14%   1.27s    404MiB  0.01%  4.00MiB
+       ene_ops: xc        101    81.8s  0.09%   810ms   32.2GiB  0.82%   326MiB
+       ene_ops: kin...    101    34.9s  0.04%   346ms   69.9MiB  0.00%   709KiB
+       ene_ops: har...    101    5.40s  0.01%  53.5ms   1.98GiB  0.05%  20.0MiB
+       ene_ops: local     101    2.06s  0.00%  20.4ms    409MiB  0.01%  4.05MiB
+   KerkerMixing           100    8.25s  0.01%  82.5ms   5.08GiB  0.13%  52.0MiB
+   QR orthonormaliz...  3.00k   4.69ms  0.00%  1.56μs     0.00B  0.00%    0.00B
+ ──────────────────────────────────────────────────────────────────────────────

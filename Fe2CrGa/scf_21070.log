@@ -1,0 +1,571 @@
+#
+#-- SCF Fe2CrGa -- case=density_02
+#
+    keywords: (damping = 0.2, type = :densmix, solver = DFTK.var"#anderson#425"{DFTK.var"#anderson#424#426"{Base.Iterators.Pairs{Union{}, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, Int64}}(DFTK.var"#anderson#424#426"{Base.Iterators.Pairs{Union{}, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}, Int64}(Base.Iterators.Pairs{Union{}, Union{}, Tuple{}, NamedTuple{(), Tuple{}}}(), 10)))
+
+hostname        = braukessel.mathcces.rwth-aachen.de
+
+started on      = 2021-07-01T12:07:09.075
+julia threads   = 1
+BLAS threads    = 1
+MPI procs       = 16
+
+temperature     = 0.01
+smearing        = DFTK.Smearing.Gaussian()
+lattice         = [0.0 5.503 5.503; 5.503 0.0 5.503; 5.503 5.503 0.0]
+Ecut            = 45.0
+fft_size        = (50, 50, 50)
+kgrid           = [13, 13, 13]
+kshift          = [0.0, 0.0, 0.0]
+n_irreducible_k = 168
+n_bands         = 59
+n_electr        = 49
+type            = densmix
+mixing          = KerkerMixing(0.8, 0.0)
+damping         = 0.2
+n     Free energy       Eₙ-Eₙ₋₁     ρout-ρin   Magnet  α      Diag
+---   ---------------   ---------   --------   ------  -----  ----
+  1   -292.8700553780         NaN   6.58e+00    5.000   0.20   1.0 
+  2   -309.0789556982   -1.62e+01   4.36e+00    4.769   0.20  12.6 
+┌ Debug: before size (250000, 1)   cond 1.0
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 1)    cond 1.0
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+  3   -311.4309311538   -2.35e+00   2.73e+00    1.466   0.20  20.7 
+┌ Debug: before size (250000, 2)   cond 20.263523108143232
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 2)    cond 20.263523108143232
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+  4   -320.3475633791   -8.92e+00   1.98e+00    2.759   0.20  14.2 
+┌ Debug: before size (250000, 3)   cond 32.49883320498502
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 3)    cond 32.49883320498502
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+  5   -322.8606447412   -2.51e+00   1.91e+00    0.573   0.20  15.7 
+┌ Debug: before size (250000, 4)   cond 42.989242772762665
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 4)    cond 42.989242772762665
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+  6   -322.8848039587   -2.42e-02   1.91e+00    0.577   0.20   3.8 
+┌ Debug: before size (250000, 5)   cond 2456.690369541773
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 5)    cond 2456.690369541773
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+  7   -333.1864070862   -1.03e+01   2.56e-01    0.647   0.20  15.0 
+┌ Debug: before size (250000, 6)   cond 10545.4324219834
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 6)    cond 10545.4324219834
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+  8   -333.2363521011   -4.99e-02   2.30e-01    0.701   0.20   6.2 
+┌ Debug: before size (250000, 7)   cond 11661.08559707359
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 7)    cond 11661.08559707359
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+  9   -332.9080074656    3.28e-01   3.00e-01    0.536   0.20   7.3 
+┌ Debug: before size (250000, 8)   cond 18974.017715878326
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 8)    cond 18974.017715878326
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 10   -333.2509680055   -3.43e-01   1.54e-01    0.831   0.20  10.2 
+┌ Debug: before size (250000, 9)   cond 38793.2722369204
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 9)    cond 38793.2722369204
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 11   -332.9861406952    2.65e-01   2.49e-01    0.883   0.20  10.6 
+┌ Debug: before size (250000, 10)   cond 41815.11122137739
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 41815.11122137739
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 12   -332.4265393631    5.60e-01   4.07e-01    0.996   0.20   6.7 
+┌ Debug: before size (250000, 10)   cond 26168.47214363279
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 26168.47214363279
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 13   -333.1965889893   -7.70e-01   1.56e-01    0.831   0.20   8.3 
+┌ Debug: before size (250000, 10)   cond 10657.577319229218
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 10657.577319229218
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 14   -333.2506809175   -5.41e-02   1.18e-01    0.860   0.20   6.3 
+┌ Debug: before size (250000, 10)   cond 8800.447404733197
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 8800.447404733197
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 15   -333.2983626867   -4.77e-02   6.22e-02    0.856   0.20   6.2 
+┌ Debug: before size (250000, 10)   cond 4296.530530680468
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 4296.530530680468
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 16   -333.3015374771   -3.17e-03   4.26e-02    0.864   0.20   8.3 
+┌ Debug: before size (250000, 10)   cond 4852.106546427806
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 4852.106546427806
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 17   -333.2933690479    8.17e-03   4.93e-02    0.837   0.20   8.0 
+┌ Debug: before size (250000, 10)   cond 1674.0791023648248
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 1674.0791023648248
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 18   -333.3037694135   -1.04e-02   3.53e-02    0.896   0.20   7.7 
+┌ Debug: before size (250000, 10)   cond 816.055482993743
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 816.055482993743
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 19   -333.3040602760   -2.91e-04   3.38e-02    0.903   0.20   3.3 
+┌ Debug: before size (250000, 10)   cond 5625.503020312722
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 5625.503020312722
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 20   -333.3039888749    7.14e-05   2.66e-02    0.991   0.20  10.5 
+┌ Debug: before size (250000, 10)   cond 16577.383014217565
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 16577.383014217565
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 21   -333.3044022820   -4.13e-04   3.10e-02    0.897   0.20  10.9 
+┌ Debug: before size (250000, 10)   cond 10429.1864814251
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 10429.1864814251
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 22   -333.3050585804   -6.56e-04   1.88e-02    0.961   0.20  10.3 
+┌ Debug: before size (250000, 10)   cond 11194.57999827703
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 11194.57999827703
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 23   -333.3050831149   -2.45e-05   1.75e-02    0.963   0.20   6.4 
+┌ Debug: before size (250000, 10)   cond 2782.3884476942344
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 2782.3884476942344
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 24   -333.3047864415    2.97e-04   2.41e-02    0.940   0.20   9.3 
+┌ Debug: before size (250000, 10)   cond 3251.394521144248
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 3251.394521144248
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 25   -333.3051282200   -3.42e-04   9.45e-03    0.992   0.20  12.1 
+┌ Debug: before size (250000, 10)   cond 3176.6629256096244
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 3176.6629256096244
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 26   -333.3051973620   -6.91e-05   7.09e-03    0.989   0.20   7.2 
+┌ Debug: before size (250000, 10)   cond 2345.604898124229
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 2345.604898124229
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 27   -333.3052635238   -6.62e-05   4.60e-03    0.985   0.20   8.3 
+┌ Debug: before size (250000, 10)   cond 3560.5860145500305
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 3560.5860145500305
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 28   -333.3052635479   -2.41e-08   1.54e-03    0.981   0.20   8.8 
+┌ Debug: before size (250000, 10)   cond 2683.0200317162257
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 2683.0200317162257
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 29   -333.3052668927   -3.34e-06   2.07e-03    0.981   0.20   9.3 
+┌ Debug: before size (250000, 10)   cond 2398.4360751583295
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 2398.4360751583295
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 30   -333.3052721334   -5.24e-06   1.30e-03    0.978   0.20   9.7 
+┌ Debug: before size (250000, 10)   cond 1222.6721358304655
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 1222.6721358304655
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 31   -333.3052718586    2.75e-07   3.81e-03    0.977   0.20   9.0 
+┌ Debug: before size (250000, 10)   cond 378.9311768835781
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 378.9311768835781
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 32   -333.3052722483   -3.90e-07   1.46e-03    0.976   0.20  10.2 
+┌ Debug: before size (250000, 10)   cond 405.1713810765452
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 405.1713810765452
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 33   -333.3052723069   -5.86e-08   1.44e-03    0.977   0.20   9.9 
+┌ Debug: before size (250000, 10)   cond 902.868571541458
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 902.868571541458
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 34   -333.3052723470   -4.01e-08   1.75e-03    0.978   0.20   9.7 
+┌ Debug: before size (250000, 10)   cond 629.9857868676725
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 629.9857868676725
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 35   -333.3052707249    1.62e-06   2.13e-03    0.977   0.20  10.0 
+┌ Debug: before size (250000, 10)   cond 393.09941708611746
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 393.09941708611746
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 36   -333.3052728253   -2.10e-06   1.69e-03    0.978   0.20  10.2 
+┌ Debug: before size (250000, 10)   cond 333.6792956308971
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 333.6792956308971
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 37   -333.3052728765   -5.12e-08   2.91e-04    0.977   0.20   9.9 
+┌ Debug: before size (250000, 10)   cond 373.13429550027513
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 373.13429550027513
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 38   -333.3052729064   -2.99e-08   2.07e-04    0.977   0.20   9.1 
+┌ Debug: before size (250000, 10)   cond 289.6022792936925
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 289.6022792936925
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 39   -333.3052727951    1.11e-07   3.60e-04    0.977   0.20   9.4 
+┌ Debug: before size (250000, 10)   cond 431.78965705408274
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 431.78965705408274
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 40   -333.3052727973   -2.23e-09   8.78e-04    0.977   0.20   8.3 
+┌ Debug: before size (250000, 10)   cond 409.8536190021471
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 409.8536190021471
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 41   -333.3052726763    1.21e-07   9.43e-04    0.977   0.20   9.8 
+┌ Debug: before size (250000, 10)   cond 432.1238959725364
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 432.1238959725364
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 42   -333.3052725967    7.97e-08   6.98e-04    0.977   0.20   8.9 
+┌ Debug: before size (250000, 10)   cond 330.4013607455198
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 330.4013607455198
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 43   -333.3052725449    5.18e-08   7.21e-04    0.977   0.20   8.5 
+┌ Debug: before size (250000, 10)   cond 637.8359705059823
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 637.8359705059823
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 44   -333.3052725786   -3.38e-08   3.25e-04    0.977   0.20   7.7 
+┌ Debug: before size (250000, 10)   cond 895.5168643268088
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 895.5168643268088
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 45   -333.3052724118    1.67e-07   4.07e-04    0.977   0.20   7.9 
+┌ Debug: before size (250000, 10)   cond 1042.4468138336701
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 1042.4468138336701
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 46   -333.3052723948    1.69e-08   3.90e-04    0.977   0.20   7.9 
+┌ Debug: before size (250000, 10)   cond 640.0468991473441
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 640.0468991473441
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 47   -333.3052725001   -1.05e-07   4.97e-04    0.977   0.20   7.3 
+┌ Debug: before size (250000, 10)   cond 394.72731189444096
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 394.72731189444096
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 48   -333.3052725699   -6.98e-08   5.97e-04    0.977   0.20   7.3 
+┌ Debug: before size (250000, 10)   cond 437.9934636027087
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 437.9934636027087
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 49   -333.3052724377    1.32e-07   4.16e-04    0.977   0.20   7.2 
+┌ Debug: before size (250000, 10)   cond 697.1377990950164
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 697.1377990950164
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 50   -333.3052724188    1.89e-08   3.95e-04    0.977   0.20   7.1 
+┌ Debug: before size (250000, 10)   cond 701.1742250525491
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 701.1742250525491
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 51   -333.3052723654    5.34e-08   3.84e-04    0.977   0.20   8.1 
+┌ Debug: before size (250000, 10)   cond 527.9653016056798
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 527.9653016056798
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 52   -333.3052724702   -1.05e-07   3.75e-04    0.977   0.20   8.3 
+┌ Debug: before size (250000, 10)   cond 429.39224773946404
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 429.39224773946404
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 53   -333.3052724209    4.94e-08   3.77e-04    0.977   0.20   7.7 
+┌ Debug: before size (250000, 10)   cond 445.44377011184525
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 445.44377011184525
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 54   -333.3052723610    5.98e-08   3.64e-04    0.977   0.20   8.6 
+┌ Debug: before size (250000, 10)   cond 329.02536333529304
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 329.02536333529304
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 55   -333.3052722903    7.07e-08   4.46e-04    0.977   0.20   7.9 
+┌ Debug: before size (250000, 10)   cond 383.05224085113286
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 383.05224085113286
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 56   -333.3052724420   -1.52e-07   5.79e-04    0.977   0.20   8.5 
+┌ Debug: before size (250000, 10)   cond 600.5718574588942
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 600.5718574588942
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 57   -333.3052726558   -2.14e-07   1.20e-04    0.977   0.20   8.4 
+┌ Debug: before size (250000, 10)   cond 432.66315114132266
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 432.66315114132266
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 58   -333.3052726438    1.20e-08   1.36e-04    0.977   0.20   8.4 
+┌ Debug: before size (250000, 10)   cond 302.405544270196
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 302.405544270196
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 59   -333.3052726293    1.45e-08   8.16e-05    0.977   0.20   7.6 
+┌ Debug: before size (250000, 10)   cond 190.55526148435612
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 190.55526148435612
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 60   -333.3052727034   -7.41e-08   5.99e-05    0.977   0.20   8.7 
+┌ Debug: before size (250000, 10)   cond 208.07442842501237
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 208.07442842501237
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 61   -333.3052726991    4.28e-09   6.01e-05    0.977   0.20   7.4 
+┌ Debug: before size (250000, 10)   cond 350.1089326886926
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 350.1089326886926
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 62   -333.3052726300    6.91e-08   1.35e-04    0.977   0.20   7.9 
+┌ Debug: before size (250000, 10)   cond 199.99857269464144
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 199.99857269464144
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 63   -333.3052727007   -7.07e-08   4.81e-05    0.977   0.20   8.5 
+┌ Debug: before size (250000, 10)   cond 381.297153317018
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 381.297153317018
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 64   -333.3052726735    2.72e-08   6.35e-05    0.977   0.20   7.7 
+┌ Debug: before size (250000, 10)   cond 349.6152960386879
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 349.6152960386879
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 65   -333.3052726163    5.72e-08   1.71e-04    0.977   0.20   7.4 
+┌ Debug: before size (250000, 10)   cond 314.2935338120162
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 314.2935338120162
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 66   -333.3052725263    9.00e-08   2.54e-04    0.977   0.20   8.2 
+┌ Debug: before size (250000, 10)   cond 260.4115640825782
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 260.4115640825782
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 67   -333.3052726241   -9.78e-08   1.88e-04    0.977   0.20   6.5 
+┌ Debug: before size (250000, 10)   cond 182.0139096537568
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 182.0139096537568
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 68   -333.3052724393    1.85e-07   2.53e-04    0.977   0.20   8.2 
+┌ Debug: before size (250000, 10)   cond 339.69710849140444
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 339.69710849140444
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 69   -333.3052723769    6.24e-08   2.54e-04    0.977   0.20   7.2 
+┌ Debug: before size (250000, 10)   cond 338.2000189225968
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 338.2000189225968
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 70   -333.3052724578   -8.09e-08   2.24e-04    0.977   0.20   8.0 
+┌ Debug: before size (250000, 10)   cond 278.28736369043526
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 278.28736369043526
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 71   -333.3052725727   -1.15e-07   8.22e-05    0.977   0.20   7.9 
+┌ Debug: before size (250000, 10)   cond 258.3655442125269
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 258.3655442125269
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 72   -333.3052726155   -4.28e-08   1.47e-05    0.977   0.20   7.4 
+┌ Debug: before size (250000, 10)   cond 742.7989478828522
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 742.7989478828522
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 73   -333.3052726325   -1.69e-08   2.50e-05    0.977   0.20   7.5 
+┌ Debug: before size (250000, 10)   cond 1267.1450516381935
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 1267.1450516381935
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 74   -333.3052726110    2.15e-08   4.89e-05    0.977   0.20   7.7 
+┌ Debug: before size (250000, 10)   cond 597.1336068754098
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 597.1336068754098
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 75   -333.3052726367   -2.57e-08   3.29e-05    0.977   0.20   8.0 
+┌ Debug: before size (250000, 10)   cond 830.2429422260028
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 830.2429422260028
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 76   -333.3052725584    7.82e-08   3.64e-05    0.977   0.20   7.6 
+┌ Debug: before size (250000, 10)   cond 656.3710667841195
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 656.3710667841195
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 77   -333.3052726076   -4.91e-08   1.57e-05    0.977   0.20   8.1 
+┌ Debug: before size (250000, 10)   cond 501.3045215025003
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 501.3045215025003
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 78   -333.3052726457   -3.82e-08   6.00e-05    0.977   0.20   7.2 
+┌ Debug: before size (250000, 10)   cond 1456.7668879821472
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 1456.7668879821472
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 79   -333.3052724188    2.27e-07   6.37e-05    0.977   0.20   8.5 
+┌ Debug: before size (250000, 10)   cond 1066.367273820421
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 1066.367273820421
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 80   -333.3052726325   -2.14e-07   2.93e-05    0.977   0.20   7.2 
+┌ Debug: before size (250000, 10)   cond 786.5852842908397
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 786.5852842908397
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 81   -333.3052726823   -4.97e-08   6.25e-05    0.977   0.20   8.5 
+┌ Debug: before size (250000, 10)   cond 644.1079735264614
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 644.1079735264614
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 82   -333.3052726838   -1.57e-09   1.36e-04    0.977   0.20   8.1 
+┌ Debug: before size (250000, 10)   cond 1260.7038581540282
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 1260.7038581540282
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 83   -333.3052721928    4.91e-07   3.43e-04    0.977   0.20   8.9 
+┌ Debug: before size (250000, 10)   cond 3067.302568392996
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 3067.302568392996
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 84   -333.3052723009   -1.08e-07   3.18e-04    0.977   0.20   8.0 
+┌ Debug: before size (250000, 10)   cond 2432.096693512221
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 2432.096693512221
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 85   -333.3052721673    1.34e-07   3.68e-04    0.977   0.20   8.9 
+┌ Debug: before size (250000, 10)   cond 2757.716288329217
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 2757.716288329217
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 86   -333.3052717406    4.27e-07   4.59e-04    0.977   0.20   9.4 
+┌ Debug: before size (250000, 10)   cond 4041.8911674351953
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 4041.8911674351953
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 87   -333.3052724851   -7.44e-07   2.86e-04    0.977   0.20   9.4 
+┌ Debug: before size (250000, 10)   cond 3353.415182835597
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 3353.415182835597
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 88   -333.3052725061   -2.11e-08   2.68e-04    0.977   0.20   8.2 
+┌ Debug: before size (250000, 10)   cond 2381.405780061438
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 2381.405780061438
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 89   -333.3052726195   -1.13e-07   1.97e-04    0.977   0.20   7.2 
+┌ Debug: before size (250000, 10)   cond 2210.155272764154
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 2210.155272764154
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 90   -333.3052726840   -6.45e-08   1.10e-04    0.977   0.20   6.9 
+┌ Debug: before size (250000, 10)   cond 2507.6817442386255
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 2507.6817442386255
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 91   -333.3052726176    6.64e-08   1.45e-04    0.977   0.20   9.2 
+┌ Debug: before size (250000, 10)   cond 2158.6547662494604
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 2158.6547662494604
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 92   -333.3052726688   -5.13e-08   5.29e-05    0.977   0.20   9.0 
+┌ Debug: before size (250000, 10)   cond 2984.7690257614786
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 2984.7690257614786
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 93   -333.3052726776   -8.72e-09   6.59e-05    0.977   0.20   8.5 
+┌ Debug: before size (250000, 10)   cond 3296.5760874445787
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 3296.5760874445787
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 94   -333.3052726660    1.15e-08   5.91e-05    0.977   0.20   8.3 
+┌ Debug: before size (250000, 10)   cond 2293.770732943637
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 2293.770732943637
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 95   -333.3052726669   -8.94e-10   3.66e-05    0.977   0.20   9.1 
+┌ Debug: before size (250000, 10)   cond 1761.9500864279837
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 1761.9500864279837
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 96   -333.3052727107   -4.38e-08   8.75e-05    0.977   0.20   8.5 
+┌ Debug: before size (250000, 10)   cond 3196.9255380663803
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 3196.9255380663803
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 97   -333.3052726986    1.21e-08   1.52e-04    0.977   0.20   9.2 
+┌ Debug: before size (250000, 10)   cond 2262.4585107008165
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 2262.4585107008165
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 98   -333.3052726214    7.71e-08   1.91e-04    0.977   0.20   8.5 
+┌ Debug: before size (250000, 10)   cond 1571.1752096045302
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 1571.1752096045302
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 99   -333.3052726029    1.85e-08   1.65e-04    0.977   0.20   9.5 
+┌ Debug: before size (250000, 10)   cond 1580.5773565202799
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 1580.5773565202799
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+ 100   -333.3052724924    1.11e-07   2.41e-04    0.977   0.20   8.6 
+┌ Debug: before size (250000, 10)   cond 2551.1209475544924
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:54
+┌ Debug: after size (250000, 10)    cond 2551.1209475544924
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/potential_mixing.jl:61
+┌ Warning: SCF not converged.
+└ @ DFTK /scratch/herbst/.julia/packages/DFTK/ANTlM/src/scf/scf_callbacks.jl:32
+
+Energy breakdown:
+    Kinetic             163.9051950
+    AtomicLocal         -305.4646513
+    AtomicNonlocal      -41.5925598
+    Ewald               -218.4915480
+    PspCorrection       8.2062430 
+    Hartree             96.6279922
+    Xc                  -36.4913161
+    Entropy             -0.0046275
+
+    total               -333.305272492369
+
+ ──────────────────────────────────────────────────────────────────────────────
+                                       Time                   Allocations      
+                               ──────────────────────   ───────────────────────
+       Tot / % measured:            5543s / 100%             317GiB / 100%     
+
+ Section               ncalls     time   %tot     avg     alloc   %tot      avg
+ ──────────────────────────────────────────────────────────────────────────────
+ self_consistent_field      1    5535s   100%   5535s    316GiB  100%    316GiB
+   LOBPCG               1.20k    4585s  82.8%   3.82s    258GiB  81.5%   220MiB
+     Hamiltonian mu...  14.6k    2226s  40.2%   153ms   47.2GiB  14.9%  3.32MiB
+       kinetic+local    14.6k    2024s  36.6%   139ms   1.10GiB  0.35%  79.5KiB
+       nonlocal         14.6k     192s  3.48%  13.2ms   32.4GiB  10.3%  2.28MiB
+     rayleigh_ritz      13.4k     553s  10.0%  41.4ms   9.01GiB  2.85%   707KiB
+     ortho!             58.7k     266s  4.81%  4.53ms   8.15GiB  2.58%   146KiB
+   compute_density        100     520s  9.39%   5.20s   7.41GiB  2.34%  75.8MiB
+   energy_hamiltonian     201     139s  2.51%   691ms   39.5GiB  12.5%   201MiB
+     ene_ops              201     132s  2.38%   656ms   34.4GiB  10.9%   175MiB
+       ene_ops: xc        201    75.7s  1.37%   377ms   31.1GiB  9.82%   158MiB
+       ene_ops: non...    201    31.4s  0.57%   156ms    442MiB  0.14%  2.20MiB
+       ene_ops: kin...    201    6.83s  0.12%  34.0ms   72.0MiB  0.02%   367KiB
+       ene_ops: har...    201    2.77s  0.05%  13.8ms   1.90GiB  0.60%  9.67MiB
+       ene_ops: local     201    734ms  0.01%  3.65ms    409MiB  0.13%  2.03MiB
+   KerkerMixing           100    3.55s  0.06%  35.5ms   2.54GiB  0.80%  26.0MiB
+   QR orthonormaliz...  1.20k   1.71ms  0.00%  1.42μs     0.00B  0.00%    0.00B
+ ──────────────────────────────────────────────────────────────────────────────
+┌ Debug: Library handles
+│   libGR_handle[] = Ptr{Nothing} @0x000000003f66b470
+│   libGR3_handle[] = Ptr{Nothing} @0x000000002f4778a0
+│   libGRM_handle[] = Ptr{Nothing} @0x0000000030b3a480
+└ @ GR /scratch/herbst/.julia/packages/GR/4DHy8/src/funcptrs.jl:67
+┌ Debug: Found GKS_ENCODING in ENV
+│   text_encoding[] = 301
+└ @ GR /scratch/herbst/.julia/packages/GR/4DHy8/src/GR.jl:468

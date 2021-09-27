@@ -1,0 +1,14 @@
+*~
+.*.swp
+init.jld2
+**/old/
+*.running
+99_other_systems
+/AlVac.pdf
+/Al_nodiis.pdf
+/Al_nodiis_Kerker.pdf
+/Fe2CrGa.pdf
+/Fe2CrGa_nodiis.pdf
+/GaAs.pdf
+/Mn3Si.pdf
+/convergence_table.tex

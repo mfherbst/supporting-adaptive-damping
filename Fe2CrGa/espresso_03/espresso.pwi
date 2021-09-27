@@ -1,0 +1,49 @@
+&CONTROL
+   tstress          = .true.
+   tprnfor          = .true.
+/
+&SYSTEM
+   ecutwfc          = 90.0
+   occupations      = 'smearing'
+   degauss          = 0.02
+   smearing         = 'gaussian'
+   input_dft        = 'pbe'
+   nspin            = 2
+   starting_magnetization(1) = 0.35714285714285715
+   starting_magnetization(2) = 0.0
+   starting_magnetization(3) = 0.3125
+   ntyp             = 3
+   nat              = 4
+   ibrav            = 0
+/
+&ELECTRONS
+   electron_maxstep = 100
+   conv_thr         = 2e-11
+   mixing_mode      = 'plain'
+   mixing_beta      = 0.3
+   mixing_ndim      = 10
+/
+&IONS
+/
+&CELL
+/
+
+ATOMIC_SPECIES
+Cr  51.9961 Cr.pbe-sp-hgh.UPF
+Ga  69.723 Ga.pbe-d-hgh.UPF
+Fe  55.845 Fe.pbe-sp-hgh.UPF
+
+K_POINTS automatic
+13 13 13  0 0 0
+
+CELL_PARAMETERS angstrom
+0.00000000000000 2.91200000000000 2.91200000000000
+2.91200000000000 0.00000000000000 2.91200000000000
+2.91200000000000 2.91200000000000 0.00000000000000
+
+ATOMIC_POSITIONS angstrom
+Cr  0.0000000000 0.0000000000 0.0000000000
+Ga  2.9120000000 2.9120000000 2.9120000000
+Fe  4.3680000000 4.3680000000 4.3680000000
+Fe  1.4560000000 1.4560000000 1.4560000000
+
