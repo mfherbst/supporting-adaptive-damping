@@ -287,8 +287,12 @@ function run_dftk(basis, resultsfile;
                 push!(save_dict["α"], isnan(info.α) ? DFTK.trial_damping(damping) : info.α)
 
                 if type == :potmix
+                    # Note: This misses a factor sqrt(info.basis.dvol)), which is taken into
+                    # account in the analyse.jl script
                     push!(save_dict["residuals"], norm(info.Vout - info.Vin))
                 elseif type == :densmix
+                    # Note: This misses a factor sqrt(info.basis.dvol)), which is taken into
+                    # account in the analyse.jl script
                     push!(save_dict["residuals"], norm(info.ρout - info.ρin))
                 end
             end
@@ -447,14 +451,16 @@ end
 
 function plot_convergence_summary(config; iteration=Inf, tol=1e-10, damping=true,
                                   outputfile=joinpath(config.directory, "summary.svg"),
-                                  scfkeys=nothing, kwargs...)
+                                  scfkeys=nothing, mintotals=nothing, kwargs...)
     function deduce_label(scfkey)
         method, alpha = parse_scfkey_label(scfkey)
         method * (isnothing(alpha) ? "" : " (α = $alpha)")
     end
 
     !mpi_master() && error("Plotting only on MPI master supported.")
-    mintotals = collect_minimal_total_energy(config)
+    if isnothing(mintotals)
+        mintotals = collect_minimal_total_energy(config)
+    end
     isempty(mintotals) && return plot()  # Return on no data
 
     if scfkeys === nothing

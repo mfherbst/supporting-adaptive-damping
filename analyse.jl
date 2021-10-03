@@ -80,6 +80,11 @@ function dump_table_convergence(io::IO;
         min_n_diags_fixed = typemax(Int)
         n_diags = Vector{Union{Missing, Int}}()
         for scfkey in allkeys
+            if isempty(mintotals)
+                push!(n_diags, typemax(Int))
+                continue
+            end
+
             method, _ = parse_scfkey_label(scfkey)
             jsonfile = joinpath(directory, "$scfkey.scfres.json")
             if !isfile(jsonfile)
@@ -103,6 +108,12 @@ function dump_table_convergence(io::IO;
             if isnothing(n_conv)
                 push!(n_diags, typemax(Int))
             else
+                # unit_cell_volume = abs(det(hcat(data["lattice"]...)))
+                # dvol = unit_cell_volume / prod(data["fft_size"])
+                # println(case, "   ", scfkey, "   ", data["residuals"][1] * sqrt(dvol),
+                #               "   ", data["residuals"][n_conv] * sqrt(dvol),
+                #               "   ", data["residuals"][n_conv]/data["residuals"][1])
+
                 n_diag = sum(data["ndiag"][1:n_conv])
                 push!(n_diags, n_diag)
                 if method == "fixed"
@@ -147,42 +158,47 @@ end
 function dump_latex_tables()
     file = "convergence_table.tex"
     allscfkeys = ["adaptive"]
-    # push!(allscfkeys, "adaptive_05")
     for i in 1:9
         push!(allscfkeys, "standard_0$i")
     end
     push!(allscfkeys, "standard_10")
-    # Al40 !
-    selected = ["Al_nodiis_Kerker", "Al_nodiis", "Al_Kerker", "Al", "AlVac",
+    selected = ["Al_nodiis_Kerker", "Al_nodiis", "Al_Kerker", "Al", "AlVac_Kerker", "AlVac",
                 :separator,
-                # "Si", "Al", :separator,
                 "GaAs",
                 :separator,
-                "CoFeMnGa", "Fe2CrGa", "Fe2MnAl", "FeNiF6", "Mn2RuGa", "Mn3Si",
+                "CoFeMnGa", "Fe2CrGa", "Fe2MnAl", "FeNiF6", "Mn2RuGa", "Mn3Si", "Mn3Si_AFM",
+                :separator,
+                "Cr19", "WFe"
                ]
     labels = Dict(
-        "Si"               => (raw"\ce{Si8} supercell"),
         "Al_nodiis"        => (raw"\ce{Al8} supercell"),
         "Al_nodiis_Kerker" => (raw"\ce{Al8} supercell"),
         "Al"               => (raw"\ce{Al40} supercell"),
         "Al_Kerker"        => (raw"\ce{Al40} supercell"),
         "GaAs"             => (raw"\ce{Ga20As20} supercell"),
+        "AlVac_Kerker"     => (raw"\ce{Al40} surface"),
         "AlVac"            => (raw"\ce{Al40} surface"),
+        "Mn3Si_AFM"        => (raw"\ce{Mn3Si}$^\text{AFM}$"),
+        "Cr19"             => (raw"\ce{Cr19} defect"),
+        "WFe"              => (raw"\ce{Fe28W8} multilayer\cite{Marks2021}"),
     )
     precons = Dict(
-        "Si"               => "None",
         "Al_nodiis"        => raw"None$^\dagger$",
         "Al_nodiis_Kerker" => raw"Kerker$^\dagger$",
         "Al_Kerker"        => "Kerker",
         "Al"               => "None",
         "GaAs"             => "None",
         "AlVac"            => "None",
+        "AlVac_Kerker"     => "Kerker",
         "CoFeMnGa"         => "Kerker",
         "Fe2CrGa"          => "Kerker",
         "Fe2MnAl"          => "Kerker",
         "FeNiF6"           => "Kerker",
         "Mn2RuGa"          => "Kerker",
         "Mn3Si"            => "Kerker",
+        "Mn3Si_AFM"        => "Kerker",
+        "Cr19"             => "Kerker",
+        "WFe"              => "Kerker",
     )
     dump_table_convergence(file; selected, labels, precons, allscfkeys)
 end
@@ -282,7 +298,8 @@ function plot_convergence(case; iteration=60, tol=1e-10,
                           scfkeys=default_scfkeys(case),
                           colormap=Dict{Float64,Int}(),
                           legend=:topright, label=nothing,
-                          mintotals=nothing, showmins=true)
+                          mintotals=nothing, showmins=true, show_αmin=true,
+                          show_damping=false)
     # First pass: For DFTK runs collect mimimal total energy
     directory = joinpath(@__DIR__, case)
     collectkeys = default_scfkeys(case)
@@ -339,8 +356,10 @@ function plot_convergence(case; iteration=60, tol=1e-10,
     p = plot(; yaxis=:log, legend, titleargs...)
     for (i, scfkey) in enumerate(sort(collect(keys(errors)), by=parse_scfkey_label))
         method, alpha = parse_scfkey_label(scfkey)
-        if method == "adaptive"
+        if method == "adaptive" && show_αmin
             label = method * " (α̃ₘᵢₙ = $alpha)"
+        elseif method == "adaptive"
+            label = "adaptive"
         elseif method == "fixed"
             label = method * " (α = $alpha)"
         else
@@ -373,6 +392,19 @@ function plot_convergence(case; iteration=60, tol=1e-10,
     end
     ylims!(p, (tol, 2 * ymax))
     ylabel!(p, "Total energy absolute error")
+
+    if show_damping
+        q = twinx()
+        for (i, scfkey) in enumerate(sort(collect(keys(errors)), by=parse_scfkey_label))
+            method, alpha = parse_scfkey_label(scfkey)
+            method == "adaptive" || continue
+            (alpha in keys(colormap)) || continue
+            plot!(q, cumdiags[scfkey], abs.(dampings[scfkey]), mark=:+,
+                  color=colormap[alpha], label="", linestyle=:dot)
+        end
+        ylims!(q, (0.0, 1.0))
+        ylabel!(q, "Damping parameter")
+    end
 
     xlims!(p, (0, min(iteration, maxiter)))
     xlabel!(p, "Number of Hamiltonian diagonalizations")
